@@ -58,19 +58,14 @@ buttonEnviar.addEventListener("click", async (event) => {
 				const data = await resp.json();
 				const token = data.response.token.split('Token:')[0];
 				localStorage.setItem('authToken', token);
-				alert("Login realizado com sucesso");
 				
 				return token;
 			})
 			.then((json) => alert("Login realizado com sucesso"))
-			.then(() => document.location.href = "../v1/new-home")
+			.then(() => document.location.href = "../v1/index")
 			.catch((err) => alert("Falha ao realizar login: " + err));
 	}
 });
-
-/////////////////////////////////////////
-
-
 
 buttonCadastrar.addEventListener("click", async (event) => {
 	event.preventDefault();
@@ -97,7 +92,6 @@ buttonCadastrar.addEventListener("click", async (event) => {
 				body: JSON.stringify(formulario),
 			})
 			if (result.status === 201) {
-				alert("Cadastro realizado com sucesso!");
 				backToLogin();
 			} else {
 				alert("Erro ao realizar cadastro." + result.status + " - " + result.statusText + " - " + result.body);

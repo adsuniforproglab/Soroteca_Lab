@@ -8,175 +8,285 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <title>ALOCAÇÃO DE AMOSTRAS</title>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
-}
+  <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-header {
-  width: 100%;
-  padding: 28px 8%;
-}
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-section {
-  padding: 28px 8%;
-}
+    /* Root Variables */
+    :root {
+      --color-primary: #bdc3c7;
+      --color-secondary: #aecfe1;
+      --color-light: #f4f7fa;
+      --color-dark: #2c3e50;
+      --color-white: #ffffff;
+      --color-border: #ccd1d9;
+      --color-hover: #467ec7;
+      --color-error: #da4141;
+      --color-disabled: #da4141;
 
-#navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      --font-small: 0.875rem;
+      --font-medium: 1rem;
+      --font-large: 1.25rem;
+      --font-extra-large: 1.5rem;
 
-.nav-logo {
-  width: 250px;
-  height: 250px;
-}
+      --padding-small: 8px;
+      --padding-medium: 16px;
+      --padding-large: 24px;
 
-#nav_list {
-  display: flex;
-  list-style: none;
-  gap: 150px;
-}
+      --border-radius: 8px;
+      --box-shadow: 0 2px 5px rgba(8, 57, 97, 0.1);
+    }
 
-.nav-item a {
-  text-decoration: none;
-  color: rgb(65, 158, 195);
-  font-size: 30px;
+    /* Body */
+    body {
+      background-color: var(--color-light);
+      color: var(--color-dark);
+      line-height: 1.6;
+    }
 
-}
+    /* Header */
+    header {
+      background-color: var(--color-white);
+      padding: var(--padding-large) 8%;
+      box-shadow: var(--box-shadow);
+    }
 
-#banner {
-  width: 70%;
-  margin: 0px 0px 0px 200px;
-}
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-#banner img {
-  max-width: 100%;
-  margin-top: 0px;
-}
+    .nav-logo {
+      width: 180px;
+      height: auto;
+    }
 
-.container {
-  margin-top: 50px;
-  background-color: #aecfe1;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(8, 57, 97, 0.1);
-}
+    #nav_list {
+      display: flex;
+      list-style: none;
+      gap: var(--padding-large);
+    }
 
-.input-group {
-  margin-bottom: 50px;
-}
+    .nav-item a {
+      text-decoration: none;
+      color: var(--color-primary);
+      font-size: var(--font-medium);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-.input-group label {
-  display: block;
-  margin-bottom: 20px;
-  font-weight: 600;
-  font-size: 30px;
-  color:rgb(55, 88, 126);
-}
-.input-group select,
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccd1d9;
-  border-radius: 6px;
-  box-sizing: border-box;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
+    .nav-item a:hover {
+      color: var(--color-hover);
+    }
 
-.input-group input:focus,
-.input-group select:focus {
-  border-color: #3498db;
-  outline: none;
-}
+    .nav-item i {
+      margin-right: 8px;
+      color: var(--color-primary);
+    }
 
-.btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #37639B;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
+    /* Container */
+    .container {
+      background-color: var(--color-white);
+      margin: var(--padding-large) auto;
+      margin-top: 50px;
+      max-width: 1200px;
+      padding: var(--padding-large);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
 
-.btn:hover {
-  background-color: #467ec7;
-}
+    /* Input Group */
+    .input-group label {
+      display: block;
+      margin-bottom: var(--padding-small);
+      font-size: var(--font-large);
+      font-weight: 600;
+      color: var(--color-dark);
+    }
 
-.result {
-  margin-top: 20px;
-  display: grid;
-  gap: 5px;
-}
+    .input-group select,
+    .input-group input {
+      width: 100%;
+      padding: var(--padding-medium);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      background-color: var(--color-light);
+      font-size: var(--font-medium);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.positions {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 10px;
-}
+    .input-group select:focus,
+    .input-group input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(55, 99, 155, 0.2);
+    }
 
-.position {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: #ad3d3d;
-  border-radius: 6px;
-  font-weight: bold;
-  color: #ffffff;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
+    /* Buttons */
+    button {
+      width: 100%;
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-border);
+      color: var(--color-dark);
+      padding: var(--padding-small) var(--padding-medium);
+      margin-top: var(--padding-medium);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: var(--font-large);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
 
-.position:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
+    button:hover {
+      background-color: var(--color-hover);
+      border-color: var(--color-primary);
+    }
 
-.occupied {
-  background-color: #da4141;
-  color: #ffffff;
-}
+    button i {
+      margin-right: 8px;
+    }
 
-.menu {
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
+    .trash-button i {
+      color: var(--color-error);
+    }
 
-.menu a {
-  color: black;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+    .refresh-button i {
+      color: var(--color-primary);
+    }
 
-.menu a:hover {
-  color: #3498db;
-}
+    .result {
+      display: grid;
+      width: 100%;
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-.menu a {
-  font-size: 0.6rem;
-}
-    
+    .positions {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .position {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      background-color: var(--color-primary);
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      color: var(--color-white);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .position:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .position.occupied {
+      background-color: var(--color-disabled);
+      color: var(--color-white);
+      cursor: not-allowed;
+    }
+
+    .position.selected {
+      border: 2px solid var(--color-primary);
+    }
+
+    /* Modal */
+    #confirmationModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--color-white);
+      padding: var(--padding-large);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+    }
+
+    .modal-content h2 {
+      margin-bottom: var(--padding-medium);
+      color: var(--color-dark);
+    }
+
+    .modal-content button {
+      margin: 0 var(--padding-small);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+      .container {
+        margin: var(--padding-large) 5%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      #nav_list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .nav-item {
+        margin-bottom: 10px;
+      }
+
+      .input-group {
+        margin-bottom: var(--padding-medium);
+      }
+
+      .positions {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .result {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: var(--padding-medium);
+      }
+
+      .positions {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .result {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #nav_list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 
@@ -190,13 +300,12 @@ section {
       <ul id="nav_list">
         <li class="nav-item ">
           <i style="color: rgb(55, 88, 126);font-size: 20px;" ; class="fa-solid fa-chalkboard-user"></i>
-          <a href="../v1/new-home">Home</a>
+          <a href="../v1/index">Home</a>
         </li>
         <li class="nav-item ">
           <i style="color: rgb(55, 88, 126);font-size: 20px;" ; class="fa-solid fa-vial"></i>
-          <a href="../v1/soroteca">Soroteca</a>
+          <a href="../v1/index">Soroteca</a>
         </li>
-
         <li class="nav-item ">
           <i style="color: rgb(55, 88, 126);font-size: 20px;" ; class="fa-solid fa-eye-dropper"></i>
           <a href="../v1/transaction">Alocação</a>
@@ -209,52 +318,87 @@ section {
           <i style="color: rgb(55, 88, 126);font-size: 20px;" ; class="fa-solid fa-power-off"></i>
           <a href="../v1/login">Login in/Logout </a>
         </li>
-
       </ul>
     </nav>
-</header>
+  </header>
 
-<main>
-  <section>
-    <div class="container">
-      <div class="input-group">
-        <label for="sampleBarCode">Pedido da Amostra:</label>
-        <input type="text" id="sampleBarCode" placeholder="INSIRA O PEDIDO" />
-      </div>
-  
-      <div class="input-group">
-        <label for="sampleType">Tipo da Amostra:</label>
-        <select id="sampleType">
-          <option value="blood">SELECIONE</option>
-          <option value="blood">SANGUE</option>
-          <option value="serum">SORO</option>
-          <option value="plasma">PLASMA</option>
-          <option value="blood">SANGUE</option>
-         
-        </select>
-      </div>
-  
-      <div class="input-group">
-        <label for="serumBankSelect">Selecione a Bandeija:</label>
-        <select id="serumBankSelect">
-          <!-- Opções serão carregadas aqui -->
-        </select>
-      </div>
-  
-      <button title="ALOCAR" class="btn" onclick="submitSample()"><i class="fas fa-box"></i></button>
-  
-      <div class="result" id="result">
-        <!-- Resultado da operação será exibido aqui -->
-      </div>
-  
-      <div class="positions" id="positions">
-        <!-- Posições da bandeja serão exibidas aqui -->
-      </div>
-    </div>
-  </section>
-</main>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="input-group">
+          <label for="sampleBarCode">Pedido da Amostra:</label>
+          <input type="text" id="sampleBarCode" placeholder="INSIRA O PEDIDO" />
+        </div>
 
-<script>
+        <div class="input-group">
+          <label for="sampleType">Tipo da Amostra:</label>
+          <select id="sampleType">
+            <option value="blood">SANGUE</option>
+            <option value="serum">SORO</option>
+            <option value="plasma">PLASMA</option>
+
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="serumBankSelect">Selecione a Bandeija:</label>
+          <select id="serumBankSelect">
+            <!-- Opções serão carregadas aqui -->
+          </select>
+        </div>
+
+        <button title="ALOCAR" class="btn" onclick="submitSample()"><i class="fas fa-box"></i></button>
+
+        <div class="result" id="result">
+          <!-- Resultado da operação será exibido aqui -->
+        </div>
+
+        <div class="positions" id="positions">
+          <!-- Posições da bandeja serão exibidas aqui -->
+        </div>
+      </div>
+      <footer
+        style="margin-top: 100px;background-color: var(--color-white); padding: var(--padding-large) 8%; box-shadow: var(--box-shadow); text-align: center;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+          <div style="flex: 1; text-align: left;">
+            <h4 style="color: var(--color-dark); margin-bottom: var(--padding-small); font-size: var(--font-large);">
+              Soroteca
+            </h4>
+            <p style="color: var(--color-primary); font-size: var(--font-small);">Gestão eficiente de amostras
+              laboratoriais
+            </p>
+          </div>
+          <div style="flex: 1; text-align: center;">
+            <nav>
+              <ul style="list-style: none; display: flex; justify-content: center; gap: var(--padding-medium);">
+                <li><a href="../v1/index"
+                    style="text-decoration: none; color: var(--color-primary); transition: color 0.3s ease;">Home</a>
+                </li>
+                <li><a href="../v1/search"
+                    style="text-decoration: none; color: var(--color-primary); transition: color 0.3s ease;">Pesquisa</a>
+                </li>
+                <li><a href="../v1/transaction"
+                    style="text-decoration: none; color: var(--color-primary); transition: color 0.3s ease;">Alocação</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div style="flex: 1; text-align: right;">
+            <p style="color: var(--color-primary); font-size: var(--font-small);">© 2024 Soroteca</p>
+            <div
+              style="display: flex; justify-content: flex-end; gap: var(--padding-small); margin-top: var(--padding-small);">
+              <i class="fab fa-facebook" style="color: var(--color-primary);"></i>
+              <i class="fab fa-twitter" style="color: var(--color-primary);"></i>
+              <i class="fab fa-linkedin" style="color: var(--color-primary);"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </section>
+  </main>
+  <script>
 
     function getCurrentDayIndex() {
       const today = new Date();
@@ -284,8 +428,7 @@ section {
         const data = await response.json();
         const serumBanks = data.response;
         const serumBankSelect = document.getElementById('serumBankSelect');
-        
-        
+
         serumBanks.forEach((bank) => {
           const option = document.createElement('option');
           option.value = bank.serumBankCode;
@@ -311,10 +454,8 @@ section {
 
       const serumBankCode = document.getElementById('serumBankSelect').value;
       const sampleBarCode = document.getElementById('sampleBarCode').value;
-      
-      const sampleType = document.createElement('sampleType');
-      sampleType.value= "";
-      sampleType.textContent="SELECIONE";
+
+      const sampleType = document.getElementById('sampleType').value;
 
       const resultDiv = document.getElementById('result');
 
@@ -328,6 +469,8 @@ section {
         sampleBarCode,
         sampleType,
       };
+
+      console.log(data);
 
       try {
         const response = await fetch(
@@ -367,7 +510,7 @@ section {
           return code.slice(0, -2); // Remove os dois últimos caracteres
         });
 
-        document.getElementById('sampleBarCode').value = '';
+        document.getElementById('sampleBarCode');
 
         const result = await response.json();
         resultDiv.innerHTML = `<p>Amostra bandejada com sucesso na posição ${result.position}.</p>`;
@@ -378,7 +521,7 @@ section {
     }
     async function renderPositions(occupiedPosition, samples) {
       const positionsDiv = document.getElementById('positions');
-      positionsDiv.innerHTML = ''; // Limpa posições anteriores
+      positionsDiv.innerHTML = '';
 
       for (let i = 0; i < 100; i++) {
         const positionDiv = document.createElement('div');

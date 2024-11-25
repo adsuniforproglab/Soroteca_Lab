@@ -16,30 +16,28 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'poppins', sans-serif;
-
         }
 
         body {
-            margin: 0px;
-            width: 100vw;
-            height: 100vw;
             display: flex;
+            justify-content: center;
             align-items: center;
-            flex-direction: column;
-
+            height: 100vh;
+            margin-top: 10px;
+            gap: 200px;
+            flex-direction: row;
             background-color: white;
         }
 
         .imagem-logo img {
-            width: 400px;
+            width: 500px;
         }
-
 
         .container {
             background-color: whitesmoke;
-            padding: 10px;
             width: 450px;
             height: 580px;
+            margin-bottom: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -149,7 +147,6 @@
 
         #signin {
             left: 25px;
-
         }
 
         #signup {
@@ -211,12 +208,10 @@
 </head>
 
 <body>
-
     <div class="imagem-logo">
         <img src="../v1/soroteca-logo" alt="">
     </div>
     <div class="container">
-
         <div class="buttonsForm">
             <div class="btnColor"></div>
             <button id="btnSignin">Sign In</button>
@@ -232,7 +227,7 @@
                 <input type="checkbox">
                 <span>Remember Password</span>
             </div>
-            <a href="..v1/new-home">
+            <a href="..v1/index">
                 <button id="submit-enviar" type="submit1">Sign In</button> <br>
             </a>
 
@@ -256,56 +251,10 @@
                 <input type="checkbox">
                 <span>Terms</span>
             </div>
-
-
             <button id="submit-cadastrar" type="submit2">Sign up</button> <br>
-
         </form>
-
-
     </div>
 </body>
-<script src="../v1/login-script"></script> 
-<script>
-    async function handleLogin() {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        if (!username || !password) {
-            alert('Por favor, preencha todos os campos.');
-            return;
-        }
-
-        try {
-            const response = await fetch('../v1/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: username,
-                    password: password,
-                }),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                alert(`Erro: ${errorData.message || 'Login falhou'}`);
-                return;
-            }
-
-            const data = await response.json();
-            const token = data.response.token.split('Token:')[0];
-            localStorage.setItem('authToken', token);
-
-            alert('Login realizado com sucesso!');
-
-            window.location.href = '../v1/new-home';
-        } catch (error) {
-            console.error('Erro na requisição:', error);
-            alert('Ocorreu um erro ao tentar realizar o login. Tente novamente.');
-        }
-    }
-</script>
+<script src="../v1/login-script"></script>
 
 </html>

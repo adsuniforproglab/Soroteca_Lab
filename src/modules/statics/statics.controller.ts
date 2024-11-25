@@ -7,25 +7,11 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Statics')
 @Controller()
 export class StaticsController {
-  @Public()
-  @Version('1')
-  @HttpCode(HttpStatus.OK)
-  @Get('home')
-  homePage(@Res() res: Response) {
-    return res.sendFile(join(`${process.cwd()}/public/index.html`));
-  }
 
   @Public()
   @Version('1')
   @HttpCode(HttpStatus.OK)
-  @Get('new-home')
-  newHomePage(@Res() res: Response) {
-    return res.sendFile(join(`${process.cwd()}/public/new-home.html`));
-  }
-  @Public()
-  @Version('1')
-  @HttpCode(HttpStatus.OK)
-  @Get('soroteca')
+  @Get('index')
   sorotecaPage(@Res() res: Response) {
     return res.sendFile(join(`${process.cwd()}/public/soroteca.html`));
   }
