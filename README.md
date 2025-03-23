@@ -85,7 +85,7 @@ npm run start:dev
 To view the API documentation, access:
 
 ```
-http://localhost:3000/api#/
+http://localhost:3000/login
 ```
 ## Front-end Example
 
