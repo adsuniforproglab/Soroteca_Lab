@@ -204,6 +204,42 @@
             left: 0;
             padding: 10px 10px;
         }
+
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                gap: 20px;
+
+            }
+
+            .imagem-logo img {
+                max-width: 300px;
+            }
+
+            .container {
+                margin: 0;
+                scale: 0.8;
+                height: 100vh;
+                padding: 10px;
+
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .imagem-logo img {
+                display: none;
+            }
+
+            .container {
+                scale: 0.8;
+                padding: 10px;
+            }
+
+            button {
+                scale: 0.8;
+            }
+        }
     </style>
 </head>
 

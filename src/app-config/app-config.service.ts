@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AppConfigService {
-  constructor(private readonly config: ConfigService) {}
+  constructor(private readonly config: ConfigService) { }
 
   get nodeEnv(): string {
     return this.config.get<string>('NODE_ENV') ?? 'development';
@@ -56,15 +56,15 @@ export class AppConfigService {
   get jwtSecret(): string {
     return this.config.get<string>('JWT_SECRET') ?? 'secret';
   }
-  
+
   get sqliteDatabase(): string {
     return this.config.get<string>('SQLITE_DATABASE') ?? 'soroteca.db';
   }
-  
+
   get sqliteDatabaseTest(): string {
     return this.config.get<string>('SQLITE_DATABASE_TEST') ?? 'soroteca-test.db';
   }
-  
+
   get sqliteInMemory(): boolean {
     return this.config.get<boolean>('SQLITE_IN_MEMORY') ?? false;
   }
