@@ -89,6 +89,7 @@ buttonCadastrar.addEventListener("click", async (event) => {
 				body: JSON.stringify(formulario),
 			})
 			if (result.status === 201) {
+				alert('Cadastro realizado com sucesso!!')
 				backToLogin();
 			} else {
 				alert("Erro ao realizar cadastro." + result.status + " - " + result.statusText + " - " + result.body);

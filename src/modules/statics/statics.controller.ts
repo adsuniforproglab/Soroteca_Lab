@@ -70,36 +70,26 @@ export class StaticsController {
   @Public()
   @Version('1')
   @HttpCode(HttpStatus.OK)
-  @Get('logo')
+  @Get('soroteca-logo')
   logo(@Res() res: Response) {
     return res.sendFile(
       join(
-        `${process.cwd()}/public/icons/soroteca.png`,
+        `${process.cwd()}/public/icons/soroteca-logo.png`,
       ),
     );
   }
   @Public()
   @Version('1')
   @HttpCode(HttpStatus.OK)
-  @Get('banner')
-  banner(@Res() res: Response) {
+  @Get('background')
+  background(@Res() res: Response) {
     return res.sendFile(
       join(
-        `${process.cwd()}/public/assets/banner.jpg`,
+        `${process.cwd()}/public/icons/background.jpg`,
       ),
     );
   }
-  @Public()
-  @Version('1')
-  @HttpCode(HttpStatus.OK)
-  @Get('soroteca-logo')
-  sorotecaLogo(@Res() res: Response) {
-    return res.sendFile(
-      join(
-        `${process.cwd()}/public/assets/soroteca.png`,
-      ),
-    );
-  }
+ 
   @Public()
   @HttpCode(HttpStatus.OK)
   @Get('*')

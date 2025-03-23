@@ -49,7 +49,7 @@
 
       /* Body */
       body {
-        background-color: var(--color-light);
+        background-color:#e8e8e9 ;
         color: var(--color-dark);
         line-height: 1.6;
       }
@@ -68,7 +68,7 @@
       }
 
       .nav-logo {
-        width: 180px;
+        width: 200px;
         height: auto;
       }
 
@@ -80,38 +80,28 @@
 
       .nav-item a {
         text-decoration: none;
-        color: var(--color-primary);
-        font-size: var(--font-medium);
-        font-weight: 500;
+        color:#2c3e50;
+        margin: 10px;
+        font-size: 30px;
+        font-weight: 400;
         transition: color 0.3s ease;
       }
-
       .nav-item a:hover {
         color: var(--color-hover);
       }
 
       .nav-item i {
         margin-right: 8px;
-        color: var(--color-primary);
+        color:#467ec7;
       }
-
-      #banner {
-        width: 70%;
-        margin: 0px 0px 0px 200px;
-      }
-
-      #banner img {
-        max-width: 100%;
-        margin-top: 0px;
-      }
-
       .container {
-        background-color: #ffffff;
-        margin: 40px auto;
-        max-width: 800px;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        background-color:var(--color-white);
+        margin: var(--padding-large) auto;
+        margin-top: 50px;
+        max-width: 1200px;
+        padding: var(--padding-large);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
       }
 
       .input-group {
@@ -322,14 +312,7 @@
         <img class="nav-logo" src="../v1/soroteca-logo" alt="nav_logo" />
 
         <ul id="nav_list">
-          <li class="nav-item">
-            <i
-              style="color: rgb(55, 88, 126); font-size: 20px"
-              ;
-              class="fa-solid fa-chalkboard-user"
-            ></i>
-            <a href="../v1/index">Home</a>
-          </li>
+          
           <li class="nav-item">
             <i
               style="color: rgb(55, 88, 126); font-size: 20px"
@@ -387,7 +370,8 @@
         <footer
           style="
             margin-top: 100px;
-            background-color: var(--color-white);
+            background-image: url(../v1/background);
+            background-size: cover;
             padding: var(--padding-large) 8%;
             box-shadow: var(--box-shadow);
             text-align: center;
@@ -434,7 +418,7 @@
                   font-size: var(--font-small);
                 "
               >
-                © 2024 Soroteca
+                © 2025 Soroteca
               </p>
               <div
                 style="
