@@ -358,9 +358,19 @@
         </div>
       </div>
       <footer
-        style="margin-top: 100px; background-color: var(--color-white); padding: var(--padding-large) 8%; box-shadow: var(--box-shadow); text-align: center;">
-        <div
-          style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+  style="
+    background-color: var(--color-white);
+    padding: var(--padding-large) 8%;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  "
+>        <div
+          style="margin-top: 100px; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
           <div style="flex: 1; text-align: left;">
             <h4 style="color: var(--color-dark); margin-bottom: var(--padding-small); font-size: var(--font-large);">
               Soroteca
@@ -368,21 +378,6 @@
             <p style="color: var(--color-primary); font-size: var(--font-small);">Gestão eficiente de amostras
               laboratoriais
             </p>
-          </div>
-          <div style="flex: 1; text-align: center;">
-            <nav>
-              <ul style="list-style: none; display: flex; justify-content: center; gap: var(--padding-medium);">
-                <li><a href="../v1/index"
-                    style="text-decoration: none; color: var(--color-primary); transition: color 0.3s ease;">Home</a>
-                </li>
-                <li><a href="../v1/search"
-                    style="text-decoration: none; color: var(--color-primary); transition: color 0.3s ease;">Pesquisa</a>
-                </li>
-                <li><a href="../v1/transaction"
-                    style="text-decoration: none; color: var(--color-primary); transition: color 0.3s ease;">Alocação</a>
-                </li>
-              </ul>
-            </nav>
           </div>
           <div style="flex: 1; text-align: right;">
             <p style="color: var(--color-primary); font-size: var(--font-small);">© 2024 Soroteca</p>
